@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>       // rozwiazanie poprawne
 #include <vector>
 #include <ctime>
 #include <cstdlib>
@@ -67,4 +67,5 @@ int main(){
     p1.say(2);
 
     return 0;
+
 }
