@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>      // rozwiązanie poprawne
 
 using namespace std;
 
@@ -43,5 +43,6 @@ int main(){
 
 
     return 0;
+
 
 }
