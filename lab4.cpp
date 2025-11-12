@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>    // prosze uzupelnic rozwiazanie
 
 
 using namespace std;
@@ -51,7 +51,7 @@ class Nauczyciel: protected Pracownik{
         void setWynagrodzenie(float im){ wynagrodzenie=im;}
         void setPrzedmiot(string nazw){ przedmiot=nazw;}
         void pokazDane(){
-            cout<<stanowisko<<endl<<wynagrodzenie<<endl<<przedmiot<<endl;
+            cout<<stanowisko<<endl<<wynagrodzenie<<endl<<przedmiot<<endl; // mozna bylo skorzystac z funkcji w nadklasie
         }
 };
 
@@ -63,7 +63,7 @@ class Administracja: protected Pracownik{
         void setWynagrodzenie(float im){ wynagrodzenie=im;}
         void setDzial(string nazw){ dzial=nazw;}
         void pokazDane(){
-            cout<<stanowisko<<endl<<wynagrodzenie<<endl<<dzial<<endl;
+            cout<<stanowisko<<endl<<wynagrodzenie<<endl<<dzial<<endl; // j.w.
 
         }
 
@@ -71,7 +71,8 @@ class Administracja: protected Pracownik{
 
 int main(){
 
-
+// tak nie mozna; nie pokazal Pan poszczegolnych klas w uzyciu
 
     return 0;
+
 }
