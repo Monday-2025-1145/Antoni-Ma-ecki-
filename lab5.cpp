@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>    // prosze uzupelnic i skorygowac rozwiazanie
 
 using namespace std;
 
@@ -32,7 +32,7 @@ class Samochod: public Pojazd{
 //zad2
 class Pojazd2{
     public:
-       virtual void przyspiesz(){
+       virtual void przyspiesz(){   // blad, ta metoda miala byc czysto wirtualna
             cout<<"Przyspieszam !!!"<<endl;
        }
         virtual ~Pojazd2(){cout<<"koniec przejazdzki"<<endl;} 
@@ -93,7 +93,7 @@ class Elektryczny{
 
 };
 class Hybryda: public Silnikowy, public Elektryczny{
-
+ // skromna ta klasa...
 };
 //zad 9
 class Pojazd9{
@@ -106,7 +106,7 @@ class Pojazd9{
        }
         virtual ~Pojazd9(){cout<<"koniec przejazdzki"<<endl;} 
 };
-class Samochod9: public Pojazd9{
+class Samochod9: public Pojazd9{ // ???
 };
 class ElektrycznySamochod9: public Samochod9{
     public:
@@ -117,7 +117,7 @@ class ElektrycznySamochod9: public Samochod9{
 
 class Pojazd10{
     public:
-       virtual void przyspiesz(){
+       virtual void przyspiesz(){   // ta metoda winna byc czysto wirtualna (problem diamentu)
             cout<<"Przyspieszam !!!"<<endl;
        }
        void hamuj(){    
@@ -139,10 +139,11 @@ class Hybryda10: public Silnikowy10, public Elektryczny10{
 };
 
 int main(){
-    Pojazd9 p;
+    Pojazd9 p;            // demonstracja zbyt uboga, brak oczekiwanych wnioskow (zadania 5 i 6)
     ElektrycznySamochod9 e;
     p.przyspiesz();
     e.przyspiesz();
 
     return 0;
+
 }
