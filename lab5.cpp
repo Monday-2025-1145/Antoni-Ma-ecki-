@@ -118,6 +118,7 @@ class ElektrycznySamochod9: public Samochod9{
 class Pojazd10{
     public:
        virtual void przyspiesz(){   // ta metoda winna byc czysto wirtualna (problem diamentu)
+                                    // Przepraszam, jest OK; dziedziczenia z tej klasy sa "virtual"
             cout<<"Przyspieszam !!!"<<endl;
        }
        void hamuj(){    
@@ -147,3 +148,4 @@ int main(){
     return 0;
 
 }
+
