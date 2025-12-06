@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Pojazd {
+class Pojazd {     // rozwiazanie poprawne; szkoda tylko, ze nie zbudowal Pan rodziny wirtualnych destruktorow
 public:
     virtual void przyspiesz() {
         cout << "Pojazd przyspiesza" << endl;
@@ -76,4 +76,5 @@ int main() {
     }
 
     return 0;
+
 }
