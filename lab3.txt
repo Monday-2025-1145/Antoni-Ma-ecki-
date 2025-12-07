@@ -1,0 +1,68 @@
+jest to kod do programu Mermaid Live Editor tworzący diagram UML
+
+classDiagram
+    %% Definicja Klasy Bazowej
+    class Osoba {
+        <<Abstract>>
+        -String imie
+        -String nazwisko
+        -String email
+    }
+
+    %% Dziedziczenie
+    class Nauczyciel {
+        -String tytulNaukowy
+        -Date dataZatrudnienia
+        +prowadzWyklad()
+    }
+    class Uczen {
+        -int numerIndeksu
+        -int rokNauki
+        +zapiszSie()
+    }
+
+    Osoba <|-- Nauczyciel : Jest
+    Osoba <|-- Uczen : Jest
+
+    %% Główna klasa kontenera
+    class Szkola {
+        -String nazwa
+        -String adres
+        +dodajKurs()
+    }
+
+    class Kurs {
+        -String nazwaKursu
+        -String kod
+        -int ECTS
+        +przypiszNauczyciela()
+    }
+
+    %% Kompozycja: Szkoła składa się z Kursów
+    Szkola "1" *-- "0..*" Kurs : Oferuje
+
+    %% Asocjacje
+    %% Jeden nauczyciel do wielu kursów (ale kurs ma 1 nauczyciela)
+    Nauczyciel "1" -- "0..*" Kurs : Prowadzi
+
+    %% Relacja wiele do wielu między uczniem a kursem
+    Uczen "0..*" -- "1..*" Kurs : Uczestniczy
+
+    %% Zasoby
+    class SalaLekcyjna {
+        -String numerSali
+        -int pojemnosc
+        +rezerwuj()
+    }
+
+    class Material {
+        -String nazwaPliku
+        -String typ
+        +pobierz()
+    }
+
+    %% Agregacja: Sala istnieje bez kursu
+    Kurs "0..*" o-- "1" SalaLekcyjna : Odbywa się w
+
+    %% Kompozycja: Materiał ginie wraz z kursem
+    Kurs "1" *-- "0..*" Material : Zawiera
