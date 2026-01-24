@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> // rozwiazanie poprawne
 #include <string>
 
 using namespace std;
@@ -50,7 +50,8 @@ public:
     }
 };
 
-class VehicleFactory {
+class VehicleFactory {    //takze i ta klasa mogła byc klasa abstrakcyjna; w slad za taka klasa mozna bylo zbudowac odpowiednie wytworcze klasy pochodne
+
 public:
     static Vehicle* stworzPojazd(string typ) {
         if (typ == "auto") return new Car();
@@ -74,7 +75,7 @@ public:
         cout << "Pizza gotowa: " << ciasto << ", " << sos << ", " << dodatek << endl;
     }
 
-    class Builder {
+    class Builder {    // tutaj z kolei mozna bylo zdefiniowac zewnetrzna hierarchie klas, z klasa abstrakcyjna Pizza_Builder i klasami pochodnymi odpowiedzialnymi za przygotowanie poszczegolnych rodzajow pizzy
         friend class Pizza;
         string d = "cienkie";
         string s = "pomidorowy";
